@@ -44,6 +44,19 @@ paths:
                           "value": "Q74@2.16.840.1.113883.2.1.3.8.2.7"
                         }
                       ],
+                      "active": true,
+                      "name": "FREEMAN HOSPITAL",
+                      "address": [
+                        {
+                          "type": "postal",
+                          "text": "FREEMAN HOSPITAL, FREEMAN ROAD, HIGH HEATON, NEWCASTLE UPON TYNE, TYNE AND WEAR, ENGLAND, NE7 7DN",
+                          "line": ["FREEMAN HOSPITAL", "FREEMAN ROAD", "HIGH HEATON"],
+                          "city": "NEWCASTLE UPON TYNE",
+                          "postalCode": "NE7 7DN",
+                          "district": "TYNE AND WEAR",
+                          "country": "ENGLAND"
+                        }
+                      ],
                       "extension": [
                         {
                           "url": "https://rts-fhir.nihr.ac.uk/StructureDefinition/Extension-NIHR-Organization-Nullified",
@@ -91,19 +104,6 @@ paths:
                                   }
                                 }]
                             }
-                        }
-                      ],
-                      "active": true,
-                      "name": "FREEMAN HOSPITAL",
-                      "address": [
-                        {
-                          "type": "postal",
-                          "text": "FREEMAN HOSPITAL, FREEMAN ROAD, HIGH HEATON, NEWCASTLE UPON TYNE, TYNE AND WEAR, ENGLAND, NE7 7DN",
-                          "line": ["FREEMAN HOSPITAL", "FREEMAN ROAD", "HIGH HEATON"],
-                          "city": "NEWCASTLE UPON TYNE",
-                          "postalCode": "NE7 7DN",
-                          "district": "TYNE AND WEAR",
-                          "country": "ENGLAND"
                         }
                       ]
                     }
@@ -198,6 +198,19 @@ paths:
                                 "value": "Q74@2.16.840.1.113883.2.1.3.8.2.7"
                               }
                             ],
+                            "active": true,
+                            "name": "FREEMAN HOSPITAL",
+                            "address": [
+                              {
+                                "type": "postal",
+                                "text": "FREEMAN HOSPITAL, FREEMAN ROAD, HIGH HEATON, NEWCASTLE UPON TYNE, TYNE AND WEAR, ENGLAND, NE7 7DN",
+                                "line": ["FREEMAN HOSPITAL", "FREEMAN ROAD", "HIGH HEATON"],
+                                "city": "NEWCASTLE UPON TYNE",
+                                "postalCode": "NE7 7DN",
+                                "district": "TYNE AND WEAR",
+                                "country": "ENGLAND"
+                              }
+                            ],
                             "extension": [
                               {
                                 "url": "https://rts-fhir.nihr.ac.uk/StructureDefinition/Extension-NIHR-Organization-Nullified",
@@ -245,19 +258,6 @@ paths:
                                         }
                                       }]
                                   }
-                              }
-                            ],
-                            "active": true,
-                            "name": "FREEMAN HOSPITAL",
-                            "address": [
-                              {
-                                "type": "postal",
-                                "text": "FREEMAN HOSPITAL, FREEMAN ROAD, HIGH HEATON, NEWCASTLE UPON TYNE, TYNE AND WEAR, ENGLAND, NE7 7DN",
-                                "line": ["FREEMAN HOSPITAL", "FREEMAN ROAD", "HIGH HEATON"],
-                                "city": "NEWCASTLE UPON TYNE",
-                                "postalCode": "NE7 7DN",
-                                "district": "TYNE AND WEAR",
-                                "country": "ENGLAND"
                               }
                             ]
                           },
