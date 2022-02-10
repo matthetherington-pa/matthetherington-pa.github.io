@@ -1,0 +1,344 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  description: API Gateway for exposing the RTS API
+  title: nihrdsi-api-dev-rts
+schemes:
+  - https
+paths:
+  /GetOrganisationList:
+
+    get:
+      tags:
+        - Common
+      description: Retrieves a list of organisations
+      produces:
+        - application/json
+      parameters:
+        - name: UserName
+          in: header
+          type: string
+        - name: Password
+          in: header
+          type: string
+        - name: Identifier
+          in: query
+          type: string
+        - name: orgType
+          in: query
+          type: string
+        - name: ModifiedDate
+          in: query
+          type: string
+        - name: PageNumber
+          in: query
+          type: integer
+        - name: PageSize
+          in: query
+          type: integer
+      summary: Get List of Organisations
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Validation failed
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-amazon-apigateway-integration:
+        responses:
+          default:
+            statusCode: '200'
+        uri: https://dev.rtsapi.cpms.nihr.ac.uk/api/v1/rts/GetOrganisationList
+        passthroughBehavior: when_no_match
+        httpMethod: GET
+        type: http_proxy
+  
+  /GetOrganisationRoleList:
+
+    get:
+      tags:
+        - Common
+      description: Retrieves a list of organisations
+      produces:
+        - application/json
+      parameters:
+        - name: UserName
+          in: header
+          type: string
+        - name: Password
+          in: header
+          type: string
+        - name: Identifier
+          in: query
+          type: string
+        - name: orgType
+          in: query
+          type: string
+        - name: ModifiedDate
+          in: query
+          type: string
+        - name: PageNumber
+          in: query
+          type: integer
+        - name: PageSize
+          in: query
+          type: integer
+      summary: Get List of Organisations
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Validation failed
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-amazon-apigateway-integration:
+        responses:
+          default:
+            statusCode: '200'
+        uri: https://dev.rtsapi.cpms.nihr.ac.uk/api/v1/rts/GetOrganisationRoleList
+        passthroughBehavior: when_no_match
+        httpMethod: GET
+        type: http_proxy
+        
+  /GetTermsetList:
+
+    get:
+      tags:
+        - Common
+      description: Retrieves a list of organisations
+      produces:
+        - application/json
+      parameters:
+        - name: UserName
+          in: header
+          type: string
+        - name: Password
+          in: header
+          type: string
+        - name: Identifier
+          in: query
+          type: string
+        - name: orgType
+          in: query
+          type: string
+        - name: ModifiedDate
+          in: query
+          type: string
+        - name: PageNumber
+          in: query
+          type: integer
+        - name: PageSize
+          in: query
+          type: integer
+      summary: Get List of Organisations
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Validation failed
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-amazon-apigateway-integration:
+        responses:
+          default:
+            statusCode: '200'
+        uri: https://dev.rtsapi.cpms.nihr.ac.uk/api/v1/rts/GetTermsetList
+        passthroughBehavior: when_no_match
+        httpMethod: GET
+        type: http_proxy
+        
+        
+definitions:
+  RtsAPIResponse:
+    type: object
+    properties:
+      Version:
+        type: string
+        description: the version of the API
+      StatusCode:
+        type: string
+        description: the statuscode of the request
+      Result:
+        type: object
+        items:
+          $ref: '#/definitions/RtsAPIResult'
+
+  RtsAPIResult:
+    type: object
+    properties:
+      RtsIODs:
+        type: array
+        items:
+          type: string
+      RtsOrganisations:
+        type: array
+        items:
+          $ref: '#/definitions/Organisation'
+      RTSOrganisationSites:
+        type: array
+        items:
+          type: string
+      RtsOrganisationsRoles:
+        type: array
+        items:
+          $ref: '#/definitions/Organisation'
+      RtsTermSets:
+        type: array
+        items:
+          $ref: '#/definitions/RtsTermset' 
+      TotalRecords:
+        type: integer
+      PageSize:
+        type: integer
+      CurrentPageNumber:
+        type: integer
+      Result:
+        type: object
+        items:
+          $ref: '#/definitions/RtsAPIResultSummary'
+
+  Organisation:
+    type: object
+    properties:
+      Name:
+        type: string
+        description: Name of the Organisation
+      Identifier:
+        type: string
+        description: The Identifier of the Organisation
+      Type:
+        type: string
+        description: The Type of the Organisation
+      ParentOrganisation:
+        type: string
+        description: The Parent of the Organisation
+      Status:
+        type: string
+        description: The Effective Start Date of the Organisation
+      EffectiveStartDate:
+        type: string
+        description: The Effective End Date of the Organisation
+      EffectiveEndDate:
+        type: string
+        description: The Status of the Organisation
+      CreatedDate:
+        type: string
+        description: The Created Date of the Organisation
+      ModifiedDate:
+        type: string
+        description: The Modified Date of the Organisation
+      AddressLine1:
+        type: string
+        description: The first Address line of the Organisation
+      AddressLine2:
+        type: string
+        description: The first Address line of the Organisation
+      AddressLine3:
+        type: string
+        description: The first Address line of the Organisation
+      AddressLine4:
+        type: string
+        description: The first Address line of the Organisation
+      AddressLine5:
+        type: string
+        description: The first Address line of the Organisation
+      PostCode:
+        type: string
+        description: The first Address line of the Organisation
+      UKCountryIdentifier:
+        type: string
+        description: The identifier for the country of the Organisation
+      UKCountryName:
+        type: string
+        description: The name for the country of the Organisation
+
+  OrganisationRole:
+    type: object
+    properties:
+      OrgIdentifier:
+        type: string
+        description: The Identifier of the Organisation this role applies to
+      RoleType:
+        type: string
+        description: The Role Type
+      Status:
+        type: string
+        description: The status of the role type
+      ParentIdentifier:
+        type: string
+        description: The status of the role type
+      EffectiveStartDate:
+        type: string
+        description: The start date of the role type
+      EffectiveEndDate:
+        type: string
+        description: The end date of the role type
+      CreatedDate:
+        type: string
+        description: The created date of the role type
+      ModifiedDate:
+        type: string
+        description: The start date of the role type
+
+  RtsTermset:
+    type: object
+    properties:
+      Name:
+        type: string
+        description: The name of the Termset
+      Description:
+        type: string
+        description: The description of the Termset
+      Identifier:
+        type: string
+        description: The identifier of the Termset
+      ParentIdentifier:
+        type: string
+        description: The name of the Termset
+      ParentIOD:
+        type: string
+        description: The parent IOD of the Termset
+      Status:
+        type: string
+        description: The status of the Termset
+      CreatedDate:
+        type: string
+        description: The created date of the Termset
+      ModifiedDate:
+        type: string
+        description: The modified date of the Termset
+      EffectiveStartDate:
+        type: string
+        description: The effective start date of the Termset
+      EffectiveEndDate:
+        type: string
+        description: The effective end date of the Termset      
+
+  RtsAPIResultSummary:
+      type: object
+      properties:
+        Result:
+          type: integer
+        Errors:
+          type: array
+          items:
+            type: object
+        DetailedErrors:
+          type: array
+          items:
+            type: object
+        Entity:
+          type: object
+        IsStale:
+          type: boolean
+        IsSuccess:
+          type: boolean
+        IsFailed:
+          type: boolean
+        
