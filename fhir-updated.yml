@@ -45,9 +45,11 @@ paths:
                         }
                       ],
                       "type": {
-                        "coding": [{
-                          "code": "GPPRACTICE@2.16.840.1.113883.5.110"
-                        }],
+                        "coding": [
+                          {
+                            "code": "GPPRACTICE@2.16.840.1.113883.5.110"
+                          }
+                        ],
                         "text": "GP PRACTICE"
                       },
                       "active": true,
@@ -56,7 +58,11 @@ paths:
                         {
                           "type": "postal",
                           "text": "FREEMAN HOSPITAL, FREEMAN ROAD, HIGH HEATON, NEWCASTLE UPON TYNE, TYNE AND WEAR, ENGLAND, NE7 7DN",
-                          "line": ["FREEMAN HOSPITAL", "FREEMAN ROAD", "HIGH HEATON"],
+                          "line": [
+                            "FREEMAN HOSPITAL",
+                            "FREEMAN ROAD",
+                            "HIGH HEATON"
+                          ],
                           "city": "NEWCASTLE UPON TYNE",
                           "postalCode": "NE7 7DN",
                           "district": "TYNE AND WEAR",
@@ -69,38 +75,45 @@ paths:
                           "valueBoolean": false
                         },
                         {
-                            "url": "https://rts-fhir.nihr.ac.uk/StructureDefinition/Extension-NIHR-Organization-StartDate",
-                            "valueDateTime": "2011-10-05T14:48:00.000Z"
+                          "url": "https://rts-fhir.nihr.ac.uk/StructureDefinition/Extension-NIHR-Organization-StartDate",
+                          "valueDateTime": "2011-10-05T14:48:00.000Z"
                         },
                         {
-                            "url": "https://rts-fhir.nihr.ac.uk/StructureDefinition/Extension-NIHR-Organization-EndDate",
-                            "valueDateTime": "2012-10-05T14:48:00.000Z"
+                          "url": "https://rts-fhir.nihr.ac.uk/StructureDefinition/Extension-NIHR-Organization-EndDate",
+                          "valueDateTime": "2012-10-05T14:48:00.000Z"
                         },
                         {
-                            "url": "https://rts-fhir.nihr.ac.uk/StructureDefinition/Extension-NIHR-Organization-Role",
-                            "valueCodeableConcept": {
-                                "coding": [{
-                                    "code": "FUNDER@2.16.840.1.113883.2.1.3.8.5.1.4.1.1"
-                                }],
-                                "text": "CLINICAL RESEARCH SPONSOR",
-                                "extension": [{
-                                  "url": "startDate",
-                                  "valueDateTime": "2011-10-05T14:48:00.000Z"
-                                }, {
-                                  "url": "endDate",
-                                  "valueDateTime": "2011-10-05T14:48:00.000Z"
-                                }, {
-                                  "url": "status",
-                                  "valueString": "Active"
-                                }, {
-                                  "url": "scoper",
-                                  "valueReference": {
-                                    "reference": "https://rts-fhir.nihr.ac.uk/Organization/f26b8ae9-183b-4cac-88e7-b5f508a58d0f",
-                                    "type": "Organization",
-                                    "display": "Test Organization"
-                                  }
-                                }]
-                            }
+                          "url": "https://rts-fhir.nihr.ac.uk/StructureDefinition/Extension-NIHR-Organization-Role",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "FUNDER@2.16.840.1.113883.2.1.3.8.5.1.4.1.1"
+                              }
+                            ],
+                            "text": "CLINICAL RESEARCH SPONSOR",
+                            "extension": [
+                              {
+                                "url": "startDate",
+                                "valueDateTime": "2011-10-05T14:48:00.000Z"
+                              },
+                              {
+                                "url": "endDate",
+                                "valueDateTime": "2011-10-05T14:48:00.000Z"
+                              },
+                              {
+                                "url": "status",
+                                "valueString": "Active"
+                              },
+                              {
+                                "url": "scoper",
+                                "valueReference": {
+                                  "reference": "https://rts-fhir.nihr.ac.uk/Organization/f26b8ae9-183b-4cac-88e7-b5f508a58d0f",
+                                  "type": "Organization",
+                                  "display": "Test Organization"
+                                }
+                              }
+                            ]
+                          }
                         }
                       ]
                     }
@@ -120,9 +133,9 @@ paths:
           schema:
             type: string
           example: K84016@2.16.840.1.113883.2.1.3.2.4.19.1
-        - name: nihrType
+        - name: type
           in: query
-          description: Type of organisation (NIHR Organization Type Code)
+          description: Code for type of organisation
           schema:
             type: string
           example: GPPRACTICE@2.16.840.1.113883.2.1.3.8.5.11.1.106
@@ -147,6 +160,12 @@ paths:
         - name: _count
           in: query
           description: See https://www.hl7.org/fhir/search.html#count
+          schema:
+            type: integer
+          example: 100
+        - name: _offset
+          in: query
+          description: See https://hapifhir.io/hapi-fhir/docs/server_plain/rest_operations_search.html#section19
           schema:
             type: integer
           example: 100
@@ -190,9 +209,11 @@ paths:
                               }
                             ],
                             "type": {
-                              "coding": [{
-                                "code": "GPPRACTICE@2.16.840.1.113883.5.110"
-                              }],
+                              "coding": [
+                                {
+                                  "code": "GPPRACTICE@2.16.840.1.113883.5.110"
+                                }
+                              ],
                               "text": "GP PRACTICE"
                             },
                             "active": true,
@@ -201,7 +222,11 @@ paths:
                               {
                                 "type": "postal",
                                 "text": "FREEMAN HOSPITAL, FREEMAN ROAD, HIGH HEATON, NEWCASTLE UPON TYNE, TYNE AND WEAR, ENGLAND, NE7 7DN",
-                                "line": ["FREEMAN HOSPITAL", "FREEMAN ROAD", "HIGH HEATON"],
+                                "line": [
+                                  "FREEMAN HOSPITAL",
+                                  "FREEMAN ROAD",
+                                  "HIGH HEATON"
+                                ],
                                 "city": "NEWCASTLE UPON TYNE",
                                 "postalCode": "NE7 7DN",
                                 "district": "TYNE AND WEAR",
@@ -214,38 +239,45 @@ paths:
                                 "valueBoolean": false
                               },
                               {
-                                  "url": "https://rts-fhir.nihr.ac.uk/StructureDefinition/Extension-NIHR-Organization-StartDate",
-                                  "valueDateTime": "2011-10-05T14:48:00.000Z"
+                                "url": "https://rts-fhir.nihr.ac.uk/StructureDefinition/Extension-NIHR-Organization-StartDate",
+                                "valueDateTime": "2011-10-05T14:48:00.000Z"
                               },
                               {
-                                  "url": "https://rts-fhir.nihr.ac.uk/StructureDefinition/Extension-NIHR-Organization-EndDate",
-                                  "valueDateTime": "2012-10-05T14:48:00.000Z"
+                                "url": "https://rts-fhir.nihr.ac.uk/StructureDefinition/Extension-NIHR-Organization-EndDate",
+                                "valueDateTime": "2012-10-05T14:48:00.000Z"
                               },
                               {
-                                  "url": "https://rts-fhir.nihr.ac.uk/StructureDefinition/Extension-NIHR-Organization-Role",
-                                  "valueCodeableConcept": {
-                                      "coding": [{
-                                          "code": "FUNDER@2.16.840.1.113883.2.1.3.8.5.1.4.1.1"
-                                      }],
-                                      "text": "FUNDER",
-                                      "extension": [{
-                                        "url": "startDate",
-                                        "valueDateTime": "2011-10-05T14:48:00.000Z"
-                                      }, {
-                                        "url": "endDate",
-                                        "valueDateTime": "2011-10-05T14:48:00.000Z"
-                                      }, {
-                                        "url": "status",
-                                        "valueString": "Active"
-                                      }, {
-                                        "url": "scoper",
-                                        "valueReference": {
-                                          "reference": "https://rts-fhir.nihr.ac.uk/Organization/f26b8ae9-183b-4cac-88e7-b5f508a58d0f",
-                                          "type": "Organization",
-                                          "display": "Test Organization"
-                                        }
-                                      }]
-                                  }
+                                "url": "https://rts-fhir.nihr.ac.uk/StructureDefinition/Extension-NIHR-Organization-Role",
+                                "valueCodeableConcept": {
+                                  "coding": [
+                                    {
+                                      "code": "FUNDER@2.16.840.1.113883.2.1.3.8.5.1.4.1.1"
+                                    }
+                                  ],
+                                  "text": "FUNDER",
+                                  "extension": [
+                                    {
+                                      "url": "startDate",
+                                      "valueDateTime": "2011-10-05T14:48:00.000Z"
+                                    },
+                                    {
+                                      "url": "endDate",
+                                      "valueDateTime": "2011-10-05T14:48:00.000Z"
+                                    },
+                                    {
+                                      "url": "status",
+                                      "valueString": "Active"
+                                    },
+                                    {
+                                      "url": "scoper",
+                                      "valueReference": {
+                                        "reference": "https://rts-fhir.nihr.ac.uk/Organization/f26b8ae9-183b-4cac-88e7-b5f508a58d0f",
+                                        "type": "Organization",
+                                        "display": "Test Organization"
+                                      }
+                                    }
+                                  ]
+                                }
                               }
                             ]
                           },
