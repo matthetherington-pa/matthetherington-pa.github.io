@@ -9,6 +9,15 @@ servers:
 tags:
   - name: Organization
     description: The Organization FHIR resource type
+components:
+  securitySchemes:
+    oAuth2ClientCredentials:
+      type: oauth2
+      description: OAuth 2.0 Client Credentials grant
+      flows:
+        clientCredentials:
+          tokenUrl: https://id.nihr.ac.uk/oauth2/token/
+          scopes: {}
 paths:
   /Organization/{id}:
     get:

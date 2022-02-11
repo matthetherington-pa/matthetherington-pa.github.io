@@ -1,0 +1,74 @@
+openapi: 3.0.1
+info:
+  title: NIHR Identity Server
+  contact: {}
+  version: "1.0"
+servers:
+  - url: https://id.nihr.ac.uk/
+    description: NIHR Identity Server
+components:
+  securitySchemes:
+    oAuth2ClientCredentials:
+      type: oauth2
+      description: OAuth 2.0 Client Credentials grant
+      flows:
+        clientCredentials:
+          tokenUrl: https://id.nihr.ac.uk/oauth2/token/
+          scopes: {}
+paths:
+  /oauth2/token:
+    post:
+      summary: "read-instance: Read Organization instance"
+      requestBody:
+        description: A request body for the client credentials OAuth 2.0 flow
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                grant_type:
+                  type: string
+                  description: The OAuth 2.0 grant type. This should be set to client_credentials
+                client_id:
+                  type: string
+                  description: The client ID that has been assigned to your application
+                client_secret:
+                  type: string
+                  description: The client secret that has been assigned to your application
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              examples:
+                Success Response:
+                  value: |-
+                    {
+                      "access_token": "eyJ4NXQiOiJaVFl5T1RjM09EazRNakEwT1RkbE56Y3hZVGcyWlRNMU1qVmxaVE5tTkdZeVlURTFaRFZqTlRBek1UbGtObVF5WVdGbE9EY3pPREkzTW1OaVpUTTNZZyIsImtpZCI6IlpUWXlPVGMzT0RrNE1qQTBPVGRsTnpjeFlUZzJaVE0xTWpWbFpUTm1OR1l5WVRFMVpEVmpOVEF6TVRsa05tUXlZV0ZsT0Rjek9ESTNNbU5pWlRNM1lnX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJmYzhmMmFlOS03MGJhLTQ4MjMtOTE2Ni0xYTM4ZDA4MmU3OGIiLCJhdXQiOiJBUFBMSUNBVElPTl9VU0VSIiwiYXVkIjoid2NfdU1GWjFfNThfTkVycWdlMldVbldQRTZ3YSIsIm5iZiI6MTY0NDQ4NDkyNSwiYXpwIjoid2NfdU1GWjFfNThfTkVycWdlMldVbldQRTZ3YSIsInNjb3BlIjoiZW1haWwgb3BlbmlkIHByb2ZpbGUiLCJpc3MiOiJodHRwczpcL2Rldi5pZC5uaWhyLmFjLnVrOjQ0M1wvb2F1dGgyXC90b2tlbiIsImV4cCI6MTY0NDU3MTMyNSwiaWF0IjoxNjQ0NDg0OTI1LCJqdGkiOiI3MDE3MTc0Ni00NWUzLTQxN2ItODI1MS1iODIzNTlkNjM3NGQiLCJlbWFpbCI6Im1hdHRAaGV0aGVyaW5ndG9uLnR2In0.CVqCVW8wUbQwvxadjCZAnZ55nA1EADtwetRYVtHROrlmZ6WNtbseisVXQJrCzYQPIRJnI27ZMWOnsjaZT2Da4O5XU43zG2c4E89N_ikkJzwZBiKTdjYm0LPoO7uMCcg1RYiigfIV7mtisSDsdeqglEcixHrPo3bCGPsoVaf905pBtUh24MajoiSQv3fZE-GqzMSLQih-4vNQwgbM9Oq5Spf6WMAw6YuX_jjJu0Gde_E0vIuiMf5iz6MKwq8Z0a9yc3PF8h51EUnK5WGNHxhacT8jKHcsWN_sJEMN4CyVaeLyUm5ui7e3_-SDb3qH-t4xPTCj3yA-5Sq6UXvovIKqRA",
+                      "token_type": "Bearer",
+                      "expires_in": 3600,
+                      "refresh_token": "eyJ4NXQiOiJaVFl5T1RjM09EazRNakEwT1RkbE56Y3hZVGcyWlRNMU1qVmxaVE5tTkdZeVlURTFaRFZqTlRBek1UbGtObVF5WVdGbE9EY3pPREkzTW1OaVpUTTNZZyIsImtpZCI6IlpUWXlPVGMzT0RrNE1qQTBPVGRsTnpjeFlUZzJaVE0xTWpWbFpUTm1OR1l5WVRFMVpEVmpOVEF6TVRsa05tUXlZV0ZsT0Rjek9ESTNNbU5pWlRNM1lnX1JTMjU2IiwiYWxnIjoiUlMyNTYif"
+                    }
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              examples:
+                Invalid Client:
+                  value: |-
+                    {
+                      "error_description": "Client Authentication failed.",
+                      "error": "invalid_client"
+                    }
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              examples:
+                Invalid Request:
+                  value: |-
+                    {
+                      "error_description": "A client_id is required",
+                      "error": "invalid_request"
+                    }
