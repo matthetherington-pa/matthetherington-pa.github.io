@@ -4,7 +4,7 @@ info:
   contact: {}
   version: "1.0"
 servers:
-  - url: https://id.nihr.ac.uk/
+  - url: https://dev.id.nihr.ac.uk/
     description: NIHR Identity Server
 components:
   securitySchemes:
@@ -13,7 +13,7 @@ components:
       description: OAuth 2.0 Client Credentials grant
       flows:
         clientCredentials:
-          tokenUrl: https://id.nihr.ac.uk/oauth2/token/
+          tokenUrl: https://dev.id.nihr.ac.uk/oauth2/token/
           scopes: {}
 paths:
   /oauth2/token:
