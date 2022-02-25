@@ -53,14 +53,14 @@ paths:
                           "value": "Q74@2.16.840.1.113883.2.1.3.8.2.7"
                         }
                       ],
-                      "type": {
+                      "type": [{
                         "coding": [
                           {
                             "code": "GPPRACTICE@2.16.840.1.113883.5.110"
                           }
                         ],
                         "text": "GP PRACTICE"
-                      },
+                      }],
                       "active": true,
                       "name": "FREEMAN HOSPITAL",
                       "address": [
@@ -93,36 +93,36 @@ paths:
                         },
                         {
                           "url": "https://rts-fhir.nihr.ac.uk/StructureDefinition/Extension-NIHR-Organization-Role",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "FUNDER@2.16.840.1.113883.2.1.3.8.5.1.4.1.1"
+                          "extension": [
+                            {
+                              "url": "identifier",
+                              "valueString": "FUNDER@2.16.840.1.113883.2.1.3.8.5.1.4.1.1"
+                            },
+                            {
+                              "url": "name",
+                              "valueString": "CLINICAL RESEARCH SPONSOR"
+                            },
+                            {
+                              "url": "startDate",
+                              "valueDateTime": "2011-10-05T14:48:00.000Z"
+                            },
+                            {
+                              "url": "endDate",
+                              "valueDateTime": "2011-10-05T14:48:00.000Z"
+                            },
+                            {
+                              "url": "status",
+                              "valueString": "Active"
+                            },
+                            {
+                              "url": "scoper",
+                              "valueReference": {
+                                "reference": "https://rts-fhir.nihr.ac.uk/Organization/f26b8ae9-183b-4cac-88e7-b5f508a58d0f",
+                                "type": "Organization",
+                                "display": "Test Organization"
                               }
-                            ],
-                            "text": "CLINICAL RESEARCH SPONSOR",
-                            "extension": [
-                              {
-                                "url": "startDate",
-                                "valueDateTime": "2011-10-05T14:48:00.000Z"
-                              },
-                              {
-                                "url": "endDate",
-                                "valueDateTime": "2011-10-05T14:48:00.000Z"
-                              },
-                              {
-                                "url": "status",
-                                "valueString": "Active"
-                              },
-                              {
-                                "url": "scoper",
-                                "valueReference": {
-                                  "reference": "https://rts-fhir.nihr.ac.uk/Organization/f26b8ae9-183b-4cac-88e7-b5f508a58d0f",
-                                  "type": "Organization",
-                                  "display": "Test Organization"
-                                }
-                              }
-                            ]
-                          }
+                            }
+                          ]
                         }
                       ]
                     }
@@ -217,14 +217,14 @@ paths:
                                 "value": "Q74@2.16.840.1.113883.2.1.3.8.2.7"
                               }
                             ],
-                            "type": {
+                            "type": [{
                               "coding": [
                                 {
                                   "code": "GPPRACTICE@2.16.840.1.113883.5.110"
                                 }
                               ],
                               "text": "GP PRACTICE"
-                            },
+                            }],
                             "active": true,
                             "name": "FREEMAN HOSPITAL",
                             "address": [
@@ -257,36 +257,36 @@ paths:
                               },
                               {
                                 "url": "https://rts-fhir.nihr.ac.uk/StructureDefinition/Extension-NIHR-Organization-Role",
-                                "valueCodeableConcept": {
-                                  "coding": [
-                                    {
-                                      "code": "FUNDER@2.16.840.1.113883.2.1.3.8.5.1.4.1.1"
+                                "extension": [
+                                  {
+                                    "url": "identifier",
+                                    "valueString": "FUNDER@2.16.840.1.113883.2.1.3.8.5.1.4.1.1"
+                                  },
+                                  {
+                                    "url": "name",
+                                    "valueString": "CLINICAL RESEARCH SPONSOR"
+                                  },
+                                  {
+                                    "url": "startDate",
+                                    "valueDateTime": "2011-10-05T14:48:00.000Z"
+                                  },
+                                  {
+                                    "url": "endDate",
+                                    "valueDateTime": "2011-10-05T14:48:00.000Z"
+                                  },
+                                  {
+                                    "url": "status",
+                                    "valueString": "Active"
+                                  },
+                                  {
+                                    "url": "scoper",
+                                    "valueReference": {
+                                      "reference": "https://rts-fhir.nihr.ac.uk/Organization/f26b8ae9-183b-4cac-88e7-b5f508a58d0f",
+                                      "type": "Organization",
+                                      "display": "Test Organization"
                                     }
-                                  ],
-                                  "text": "FUNDER",
-                                  "extension": [
-                                    {
-                                      "url": "startDate",
-                                      "valueDateTime": "2011-10-05T14:48:00.000Z"
-                                    },
-                                    {
-                                      "url": "endDate",
-                                      "valueDateTime": "2011-10-05T14:48:00.000Z"
-                                    },
-                                    {
-                                      "url": "status",
-                                      "valueString": "Active"
-                                    },
-                                    {
-                                      "url": "scoper",
-                                      "valueReference": {
-                                        "reference": "https://rts-fhir.nihr.ac.uk/Organization/f26b8ae9-183b-4cac-88e7-b5f508a58d0f",
-                                        "type": "Organization",
-                                        "display": "Test Organization"
-                                      }
-                                    }
-                                  ]
-                                }
+                                  }
+                                ]
                               }
                             ]
                           },
