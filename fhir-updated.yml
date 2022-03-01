@@ -134,6 +134,14 @@ paths:
       summary: "search-type: Search for Organization instances"
       description: Search for Organization instances
       parameters:
+        - name: name
+          in: query
+          description: >-
+            Search parameter is a simple string, like a name part. Search is case-insensitive and accent-insensitive. May match just the start of a string. String parameters may contain spaces.
+            See https://www.hl7.org/fhir/search.html
+          schema:
+            type: string
+          example: palm
         - name: identifier
           in: query
           description: >-
